@@ -24,12 +24,10 @@ end
 
 desc 'Build the package and publish it to rubygems.pkg.github.com'
 task publish: :build do
-  require 'cequel'
-
   # Requires local setup of personal access token, see:
   # 1. https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-rubygems-registry#authenticating-with-a-personal-access-token
   system("gem push --key github --host https://rubygems.pkg.github.com/art19 " \
-         "pkg/cequel-#{JSONAPI::VERSION}.gem")
+         "pkg/cequel-#{Cequel::VERSION}.gem")
 end
 
 desc 'Create git release tag'
