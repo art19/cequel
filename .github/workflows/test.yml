@@ -42,13 +42,14 @@ jobs:
     env:
       BUNDLE_GEMFILE: gemfiles/rails_${{ matrix.rails }}.gemfile
     steps:
+      - run: |
+          bundle config --local github.com $GH_TOKEN
       - uses: actions/checkout@v2
       - uses: ruby/setup-ruby@v1
         with:
           ruby-version: ${{ matrix.ruby }}
           bundler-cache: true
       - run: |
-          bundle config --local github.com $GH_TOKEN
           bundle exec rake test
         env:
           RAILS_ENV: test
