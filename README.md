@@ -674,6 +674,19 @@ Cassandra](http://www.amazon.com/gp/product/1783989203/ref=s9_simh_co_p14_d4_i1?
 a hands-on guide to Cassandra application development by example, written by
 the creator of Cequel.
 
+
+### ART19 Gem Publishing
+
+Releases are manual, performed locally on a developer's machine. Gems are published to Github Packages. A comprehensive outline of this process can be found here: https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-rubygems-registry.
+
+1. Increment the `ART19_REVISION` in [lib/cequel/version.rb#L8](https://github.com/art19/cequel/blob/master/lib/cequel/version.rb#L8)
+
+2. Publish the gem:
+
+```
+bundle exec rake publish
+```
+
 ## License ##
 
 Cequel is distributed under the MIT license. See the attached LICENSE for all

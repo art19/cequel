@@ -3,6 +3,7 @@ require File.expand_path('../lib/cequel/version', __FILE__)
 Gem::Specification.new do |s|
   s.name = 'cequel'
   s.version = Cequel::VERSION
+  s.metadata["allowed_push_host"] = 'https://rubygems.pkg.github.com/art19'
   s.authors = [
     'Mat Brown', 'Aubrey Holland', 'Keenan Brock', 'Insoo Buzz Jung',
     'Louis Simoneau', 'Peter Williams', 'Kenneth Hoffman', 'Antti Tapio',
