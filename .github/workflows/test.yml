@@ -53,4 +53,3 @@ jobs:
           bundle exec rake test
         env:
           RAILS_ENV: test
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
