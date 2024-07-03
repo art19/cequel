@@ -24,14 +24,10 @@ jobs:
           - "6.1"
           - "7.0"
           - "7.1"
-        cassandra:
-          - "2.2"
-          - "3.0"
-          - "3.11"
-    name: Ruby ${{ matrix.ruby }} / Rails ${{ matrix.rails }} / Cassandra ${{ matrix.cassandra }}
+    name: Ruby ${{ matrix.ruby }} / Rails ${{ matrix.rails }}
     services:
-      cassandra:
-        image: cassandra:${{ matrix.cassandra }}
+      scylla:
+        image: scylladb/scylla
         ports:
           - 9042:9042
         options: >-
