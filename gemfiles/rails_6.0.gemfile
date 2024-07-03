@@ -6,7 +6,7 @@ gem "activemodel", "~> 6.0.6"
 
 # pull the ART19 patched version of cassandra-driver
 source 'https://rubygems.pkg.github.com/art19' do
-  gem 'cassandra-driver', '3.5.2.1'
+  gem 'cassandra-driver', '~> 3.2.5.1'
 end
 
 gemspec :path => "../"
