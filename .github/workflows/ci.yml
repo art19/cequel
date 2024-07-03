@@ -48,7 +48,7 @@ jobs:
           ruby-version: ${{ matrix.ruby }}
           bundler-cache: true
         env:
-          BUNDLE_RUBYGEMS__PKG__GITHUB__COM: ${{ secrets.GITHUB_TOKEN }}
+          BUNDLE_RUBYGEMS__PKG__GITHUB__COM: ${{ secrets.RUBYGEMS_AUTH_TOKEN }}
       - run: |
           bundle exec rake test
         env:
