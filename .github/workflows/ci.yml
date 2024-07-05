@@ -9,7 +9,7 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latest-8-cores
     strategy:
       fail-fast: false
       matrix:
@@ -34,7 +34,7 @@ jobs:
           --health-cmd "cqlsh -e 'SHOW VERSION' localhost"
           --health-interval 10s
           --health-timeout 5s
-          --health-retries 40
+          --health-retries 60
     env:
       BUNDLE_GEMFILE: gemfiles/rails_${{ matrix.rails }}.gemfile
     steps:
