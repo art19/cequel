@@ -38,6 +38,7 @@ jobs:
           BUNDLE_RUBYGEMS__PKG__GITHUB__COM: ${{ secrets.GITHUB_TOKEN }}
       - run: |
           docker run --name my_scylla_container -d -p 9042:9042 scylladb/scylla
+          sleep 100
       - run: |
           bundle exec rake test
         env:
