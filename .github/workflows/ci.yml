@@ -28,7 +28,7 @@ jobs:
         scylladb:
           - "4.3.6"
           - "4.4.3"
-    name: Ruby ${{ matrix.ruby }} / Rails ${{ matrix.rails }}
+    name: Ruby ${{ matrix.ruby }} / Rails ${{ matrix.rails }} / ScyllaDB ${{ matrix.scylladb }}
     env:
       BUNDLE_GEMFILE: gemfiles/rails_${{ matrix.rails }}.gemfile
     steps:
