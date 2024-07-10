@@ -10,6 +10,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    timeout-minutes: 40
     strategy:
       fail-fast: false
       matrix:
@@ -24,21 +25,10 @@ jobs:
           - "6.1"
           - "7.0"
           - "7.1"
-        cassandra:
-          - "2.2"
-          - "3.0"
-          - "3.11"
-    name: Ruby ${{ matrix.ruby }} / Rails ${{ matrix.rails }} / Cassandra ${{ matrix.cassandra }}
-    services:
-      cassandra:
-        image: cassandra:${{ matrix.cassandra }}
-        ports:
-          - 9042:9042
-        options: >-
-          --health-cmd "cqlsh -e 'SHOW VERSION' localhost"
-          --health-interval 10s
-          --health-timeout 5s
-          --health-retries 5
+        scylladb:
+          - "4.3.6"
+          - "4.4.3"
+    name: Ruby ${{ matrix.ruby }} / Rails ${{ matrix.rails }} / ScyllaDB ${{ matrix.scylladb }}
     env:
       BUNDLE_GEMFILE: gemfiles/rails_${{ matrix.rails }}.gemfile
     steps:
@@ -49,6 +39,9 @@ jobs:
           bundler-cache: true
         env:
           BUNDLE_RUBYGEMS__PKG__GITHUB__COM: ${{ secrets.GITHUB_TOKEN }}
+      - run: |
+          docker run --name my_scylla_container -d -p 9042:9042 scylladb/scylla:${{ matrix.scylladb }}
+          sleep 30
       - run: |
           bundle exec rake test
         env:

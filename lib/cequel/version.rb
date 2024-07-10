@@ -5,6 +5,6 @@ module Cequel
   # We publish our fork with a revision number appended to the upstream version.
   #
   # @return [String] the ART19 revision number
-  ART19_REVISION = '1'.freeze
+  ART19_REVISION = '2'.freeze
   VERSION = "3.2.1.#{ART19_REVISION}".freeze
 end
