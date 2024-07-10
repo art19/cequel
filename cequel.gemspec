@@ -30,7 +30,7 @@ DESC
   s.add_runtime_dependency 'activemodel', '>= 4.0'
   s.add_runtime_dependency 'bigdecimal', '~> 3.0'
   # Require the ART19 patched version of cassandra-driver
-  s.add_runtime_dependency 'cassandra-driver', '~> 3.2.5.1'
+  s.add_runtime_dependency 'cassandra-driver', '~> 3.2.5.2'
   s.add_runtime_dependency 'sorted_set', '~> 1.0'
   s.add_development_dependency 'appraisal', '~> 1.0'
   s.add_development_dependency 'wwtd', '~> 0.5'

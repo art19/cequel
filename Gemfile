@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 # pull the ART19 patched version of cassandra-driver
 source 'https://rubygems.pkg.github.com/art19' do
-  gem 'cassandra-driver', '~> 3.2.5.1'
+  gem 'cassandra-driver', '~> 3.2.5.2'
 end
 
 gemspec
