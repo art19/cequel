@@ -2,7 +2,7 @@
 
 source "https://rubygems.org"
 
-gem "activemodel", "~> 6.1"
+gem "activemodel", "~> 6.1.7"
 
 # pull the ART19 patched version of cassandra-driver
 source 'https://rubygems.pkg.github.com/art19' do
